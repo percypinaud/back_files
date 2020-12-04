@@ -37,7 +37,8 @@ app.post('/files',upload.array('files'), (req,res) => {
             let file = new File({
                 archivo: req.files[i].filename,
                 author: "Emanuel Pinaud",
-                peso: req.files[i].size
+                peso: req.files[i].size,
+                extension: req.files[i].filename.split(".")[1]
             });
             file.save((err,data) => {
                 if(err) res.status(500).send({ message:`Error al crear el Archivo ${err}`});

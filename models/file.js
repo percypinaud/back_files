@@ -8,6 +8,7 @@ const FileSchema =new Schema({
     fec_crea: {type: Date, default : Date.now()},
     author: {type:String, required:true},
     peso: { type: String, required: true},
+    extension: {type:String, required:true}
 });
 
 module.exports = mongoose.model("File",FileSchema);
